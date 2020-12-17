@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>You can make a new task</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <table>
+            <tr>
+                <td>Task name</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td>Date when it happend</td>
+                <td><input type="text" name="time_now"></td>
+            </tr>
+            <tr>
+                <td>Date to submit</td>
+                <td><input type="text" name="time_to_submit"></td>
+            </tr>
+            <tr>
+{#                <td><a href="{{ url_for('main') }}">home</a></td>#}
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

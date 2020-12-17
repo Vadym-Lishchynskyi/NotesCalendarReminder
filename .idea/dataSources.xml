@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="NotesCalendar@localhost" uuid="4304a1fb-c97f-44eb-a7cb-6fdbeed7f137">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/NotesCalendar</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="vtc@localhost" uuid="e1edc29c-444e-4e5a-8f47-aad3851f512a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/vtc</jdbc-url>
+    </data-source>
+  </component>
+</project>
