@@ -1,0 +1,24 @@
+.tasks{
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
+    grid-gap: 10px;
+}
+.tasks div{
+    border:1px solid #cccccc;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.6);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.71);
+    padding: 20px;
+}
+.add_new_task{
+    width: 200px;
+    background-color: rgba(255,255,255,0.6);
+    margin: 0 auto;
+    transition-duration: .3s;
+}
+.add_new_task:hover{
+    background-color: #fff;
+    box-shadow:5px 5px 15px 5px rgba(0,0,0,0.71);
+}

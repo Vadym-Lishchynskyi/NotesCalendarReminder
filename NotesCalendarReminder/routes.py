@@ -8,8 +8,15 @@ from NotesCalendarReminder.models import Users, Tasks
 
 ######## General web-pages ########
 @app.route('/')
+@login_required
 def home():
-    return funcs.home()
+    user_id = session['_user_id']
+    return funcs.home(user_id)
+
+
+@app.route('/')
+def main():
+    return funcs.main()
 
 
 @app.route('/new_task', methods=['POST', 'GET'])

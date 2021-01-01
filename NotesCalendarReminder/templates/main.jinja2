@@ -1,0 +1,23 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <h1>Hello you are on a main page</h1>
+    <div class="tasks">
+        {% for i in tasks %}
+            <div class="listOfDays">
+                <ol>
+                    <li>{{ i.name }}</li>
+                </ol>
+                <ol>
+                    <li>{{ i.description }}</li>
+                </ol>
+                <ol>
+                    <li>{{ i.date_to_submit }}</li>
+                </ol>
+                <a href="#" class="more">more</a>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <a class='add_new_task' href="{{ url_for('new_task') }}">New task</a>
+{% endblock %}

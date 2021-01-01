@@ -21,13 +21,12 @@ def login():
 
                 next_page = request.args.get('next')
                 print('you are logged in!')
-                redirect('/')
-                return render_template('main.html')
+                return redirect(url_for('main'))
             else:
                 flash('Password or email is incorrect')
     else:
         flash('Please fill mail and passwords fields')
-        return render_template('login.html')
+        return render_template('login.jinja2')
 
 
 def register():
@@ -49,7 +48,7 @@ def register():
             db.session.commit()
 
             return redirect(url_for('login'))
-    return render_template('register.html')
+    return render_template('register.jinja2')
 
 
 def logout():
@@ -68,11 +67,17 @@ def redirect_to_signin(response):
 
 
 ######## General web-pages ########
-def home():
-    a = db.session.query(Tasks).all()
-    print(type(a))
+def home(user):
+    print(f'here is our user {user}')
+    a = db.session.query(Tasks).filter(Tasks.user_id == user).all()
+    print(type(a), 'type of a')
     for i in a:
         print(i.name)
+
+    return render_template('main.jinja2', tasks=a)
+
+
+def main():
     return render_template('for_everybody.html')
 
 
@@ -96,5 +101,5 @@ def new_task(user_mail):
         db.session.add(new_task_)
         db.session.commit()
 
-        return render_template('main.html')
-    return render_template('new_task.html')
+        return redirect(url_for('main'))
+    return render_template('new_task.jinja2')
